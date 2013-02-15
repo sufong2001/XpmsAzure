@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ServiceStack.Text;
+using System;
 using System.Linq;
-using ServiceStack.Text;
-using ServiceStack.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace J.F.Libs.Extensions
 {
@@ -29,10 +28,10 @@ namespace J.F.Libs.Extensions
         {
             var convertable = false;
 
-            switch(val.ToLower())
+            switch (val.ToLower())
             {
-                case "on" :
-                case "yes" :
+                case "on":
+                case "yes":
                     convertable = true;
                     break;
             }
@@ -50,7 +49,6 @@ namespace J.F.Libs.Extensions
 
             return retVal.Select(s => s.ConvertTo<TOutput>()).ToArray();
         }
-
 
         public static string ToJsonArray(this string val)
         {
@@ -83,6 +81,11 @@ namespace J.F.Libs.Extensions
             if (string.IsNullOrEmpty(val)) return default(T);
 
             return val.FromJson<T>();
+        }
+
+        public static string SeperateCamelCase(this string value, string format = " ")
+        {
+            return Regex.Replace(value, @"([A-Z])(?<=[a-z]\1|[A-Za-z]\1(?=[a-z]))", format + "$1");
         }
     }
 }

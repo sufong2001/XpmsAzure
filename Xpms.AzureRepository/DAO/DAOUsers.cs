@@ -75,6 +75,7 @@ namespace Xpms.AzureRepository.DAO
         {
             var user = userData.MapToTableEntity<User>();
             user.PartitionKey = UsersTablePartition.User;
+            user.RowKey = userData.Id;
 
             UsersTable.Update(user);
         }

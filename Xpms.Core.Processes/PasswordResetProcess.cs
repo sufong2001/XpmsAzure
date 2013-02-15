@@ -1,6 +1,6 @@
 ﻿using Xpms.Core.Constants;
 using Xpms.Core.Exceptions;
-using Xpms.Core.Models;
+using Xpms.Core.Models.Requests;
 using Xpms.Core.Processes.Base;
 
 namespace Xpms.Core.Processes
@@ -34,7 +34,7 @@ namespace Xpms.Core.Processes
             return record.SaltedHash;
         }
 
-        public string PasswordReset(ForgotPasswordRequest request)
+        public string PasswordReset(PasswordResetConfirmRequest request)
         {
             var record = RepoUsers.GetPasswordResetRecord(request.Key);
 

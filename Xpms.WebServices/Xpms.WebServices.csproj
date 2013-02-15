@@ -96,7 +96,7 @@
     <Compile Include="Extensions\AuthSessionExtensions.cs" />
     <Compile Include="Extensions\ConfigurationExtensions.cs" />
     <Compile Include="Auth\GoogleOpenIdOAuthExProvider.cs" />
-    <Compile Include="PasswordReserService.cs" />
+    <Compile Include="PasswordResetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignupService.cs" />
   </ItemGroup>

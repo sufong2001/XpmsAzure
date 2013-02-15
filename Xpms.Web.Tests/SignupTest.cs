@@ -9,6 +9,7 @@ using System.Linq;
 using ServiceStack.ServiceInterface.Auth;
 using Xpms.Core.Models;
 using Xpms.Core.Constants;
+using Xpms.Core.Models.Requests;
 
 namespace Xpms.Web.Tests
 {
@@ -103,7 +104,7 @@ namespace Xpms.Web.Tests
         public void TestSingnup()
         {
             var respond = ServiceClient.Post<object>("/signup"
-                , new SignupRequet { Email = "sufong", Password = "1234" });
+                , new SignupRequest { Email = "sufong", Password = "1234" });
 
             Assert.AreEqual(respond, respond);
         }
@@ -113,18 +114,18 @@ namespace Xpms.Web.Tests
         public void TestSingnupActivation()
         {
             var respond = ServiceClient.Patch<string>("/signup"
-                , new SignupRequet {  Email = "sufong2001@gmail.com", Password = "gmail123" });
+                , new SignupRequest {  Email = "sufong2001@gmail.com", Password = "gmail123" });
 
-            respond = ServiceClient.Get<string>("/signup/activation/?activationKey=" + respond);
+            respond = ServiceClient.Get<string>("/signup-activation?activationKey=" + respond);
 
             Assert.AreEqual(respond, respond);
         }
 
         [TestMethod]
-        public void TestForgotPassword()
+        public void TestPasswordReset()
         {
             var respond = ServiceClient.Post<object>("/password-reset/"
-                , new ForgotPasswordRequest { Email = "sufong"});
+                , new PasswordResetRequest { Email = "sufong"});
 
             Assert.IsNotNull(respond);
         }
@@ -133,13 +134,13 @@ namespace Xpms.Web.Tests
         public void TestResetPassword()
         {
             var respond = ServiceClient.Post<string>("/password-reset/"
-                , new ForgotPasswordRequest { Email = "sufong" });
+                , new PasswordResetRequest { Email = "sufong" });
 
-            var hash = ServiceClient.Post<string>("/password-reset/"
-                , new ForgotPasswordRequest { Stage = PasswordResetStage.Verification, Key = respond });
+            var hash = ServiceClient.Post<string>("/password-reset-verification"
+                , new PasswordResetVerificationRequest { Key = respond });
 
-            var key = ServiceClient.Post<string>("/password-reset/"
-                , new ForgotPasswordRequest { Stage = PasswordResetStage.Reset, Key = respond, Hash = hash, NewPassword = "new password" });
+            var key = ServiceClient.Post<string>("/password-reset-confirm"
+                , new PasswordResetConfirmRequest { Key = respond, Hash = hash, NewPassword = "new password" });
 
             Assert.AreEqual(key, respond);
         }

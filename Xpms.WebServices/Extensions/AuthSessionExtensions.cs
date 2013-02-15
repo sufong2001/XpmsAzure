@@ -8,12 +8,13 @@ using Xpms.Core.Constants;
 using Xpms.Core.IDB;
 using Xpms.Core.Models;
 using ServiceStack.ServiceInterface.Auth;
+using Xpms.Core.Models.Requests;
 
 namespace Xpms.WebServices.Extensions
 {
     public static class AuthSessionExtensions
     {
-        public static SignupRequest GetOpenAuthSignupRequest(this IAuthSession session)
+        public static SignupWithOpenIdRequest GetOpenAuthSignupRequest(this IAuthSession session)
         {
             var token = session.ProviderOAuthAccess.LastOrDefault();
 
@@ -21,10 +22,9 @@ namespace Xpms.WebServices.Extensions
 
             var pass = session.CreatedAt.ToString();
 
-            return new SignupRequest
+            return new SignupWithOpenIdRequest
                 {
                    UserId =  token.UserId,
-                   Stage = SignupStage.OpenAuthRequest,
                    Email = session.Email,
                    Password = pass,
                    ConfirmPassword = pass,

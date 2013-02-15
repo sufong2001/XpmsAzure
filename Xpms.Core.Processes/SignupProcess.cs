@@ -2,6 +2,7 @@
 using Xpms.Core.Constants;
 using Xpms.Core.Exceptions;
 using Xpms.Core.Models;
+using Xpms.Core.Models.Requests;
 using Xpms.Core.Processes.Base;
 
 namespace Xpms.Core.Processes
@@ -26,7 +27,7 @@ namespace Xpms.Core.Processes
             return key;
         }
 
-        public string RegisterOpenAuth(SignupRequest signup)
+        public string RegisterOpenAuth(SignupWithOpenIdRequest signup)
         {
             var user = RepoUsers.GetUserByEmail(signup.Email);
 

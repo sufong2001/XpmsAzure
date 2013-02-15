@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Funq;
+﻿using Funq;
 using ServiceStack.Authentication.OpenId;
 using ServiceStack.Configuration;
 using ServiceStack.ServiceHost;
@@ -8,9 +7,11 @@ using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.WebHost.Endpoints;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Xpms.Core.IDB;
-using Xpms.Core.Models;
+using Xpms.Core.Models.Requests;
 using Xpms.WebServices.Auth;
+using J.F.Libs.Extensions;
 
 namespace Xpms.WebServices.Extensions
 {
@@ -37,11 +38,28 @@ namespace Xpms.WebServices.Extensions
         public static void ConfigRoutes(this IServiceRoutes routes)
         {
             //Configure User Defined REST Paths
-            routes
-              .Add<SignupRequest>("/signup")
-              .Add<SignupRequest>("/signup/{Stage}/")
-              .Add<ForgotPasswordRequest>("/password-reset")
-              .Add<ForgotPasswordRequest>("/password-reset/{Stage}");
+            routes.RegisterRequestModels<IRequest>();
+        }
+
+        public static void RegisterRequestModels<T>(this IServiceRoutes routes, Assembly assemble = null
+            , string removePrefix = " " , string removePostfix ="Request", bool fullName = false)
+        {
+            var requestModels = (assemble ?? typeof(T).Assembly)
+                .GetTypes()
+                .Where(type => (typeof(T).IsAssignableFrom(type) && type.IsClass && !type.IsAbstract)
+                    || type.IsSubclassOf(typeof(T))).ToArray();
+
+            foreach (var requestModel in requestModels)
+            {
+                var name = fullName ? requestModel.FullName : requestModel.Name;
+                var restPath = "/" + name.Replace(removePrefix, "")
+                                        .Replace(removePostfix, "")
+                                        .SeperateCamelCase("-").ToLower();
+
+                routes.Add(requestModel
+                    , restPath
+                    , null);
+            }
         }
 
         public static void RegisterXpmsProcesses<T>(this Container container, Assembly assemble = null, ReuseScope reuse = ReuseScope.Hierarchy)

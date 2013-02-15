@@ -51,20 +51,15 @@
     <Compile Include="Exceptions\UserAlreadyExistsException.cs" />
     <Compile Include="IDB\IRepoData.cs" />
     <Compile Include="Models\ActivationData.cs" />
-    <Compile Include="Models\ForgotPasswordRequest.cs" />
-    <Compile Include="Models\ForgotPasswordRespond.cs" />
+    <Compile Include="Models\Requests\IRequest.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="IDB\IRepoAccounts.cs" />
     <Compile Include="IDB\IRepository.cs" />
     <Compile Include="IDB\IRepoUsers.cs" />
     <Compile Include="ISecurity\IAuth.cs" />
     <Compile Include="Models\PasswordResetData.cs" />
-    <Compile Include="Models\SignupRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Models\SignupResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Models\Requests\PasswordReset.cs" />
+    <Compile Include="Models\Requests\Signup.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

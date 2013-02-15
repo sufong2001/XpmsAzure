@@ -1,6 +1,5 @@
 ﻿using ServiceStack.ServiceInterface;
-using Xpms.Core.Constants;
-using Xpms.Core.Models;
+using Xpms.Core.Models.Requests;
 using Xpms.Core.Processes;
 using Xpms.WebServices.Extensions;
 
@@ -10,54 +9,26 @@ namespace Xpms.WebServices
     {
         public SignupProcess Process { set; get; }
 
-        public object Get(SignupRequest request)
+        public object Any(SignupRequest request)
         {
-            switch (request.Stage)
-            {
-                case SignupStage.Request:
-                    Process.Register(request);
-                    break;
+            var key = Process.Register(request);
+            return key;
+        }
 
-                case SignupStage.OpenAuthRequest:
-                    request = this.GetSession()
-                        .GetOpenAuthSignupRequest();
-                    Process.RegisterOpenAuth(request);
-                    break;
+        public object Any(SignupWithOpenIdRequest request)
+        {
+            request = this.GetSession()
+                          .GetOpenAuthSignupRequest();
 
-                case SignupStage.Activation:
-                    Process.Activation(request.ActivationKey);
-                    break;
-            }
+            Process.RegisterOpenAuth(request);
+
             return this.GetSession();
         }
 
-        public object Post(SignupRequest request)
+        public object Any(SignupActivationRequest request)
         {
-            Process.Register(request);
-
-            return "ok";
-        }
-
-        public object Put(SignupRequest request)
-        {
-            return null;
-        }
-
-        public object Patch(SignupRequest request)
-        {
-            string val = null;
-            switch (request.Stage)
-            {
-                case SignupStage.Request:
-                    val = Process.Register(request);
-                    break;
-            }
-
-            return val;
-        }
-
-        public void Delete(SignupRequest request)
-        {
+            Process.Activation(request.ActivationKey);
+            return this.GetSession();
         }
     }
 }

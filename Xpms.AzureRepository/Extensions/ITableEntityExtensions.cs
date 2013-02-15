@@ -18,7 +18,7 @@ namespace Xpms.AzureRepository.Extensions
             return Mapper.Map<T>(entity);
         }
 
-        public static TDestination MapToTableEntity<TDestination>(this object data)
+        public static TDestination MapToEntity<TDestination>(this object data)
             where TDestination : class
         {
             if (data == null) return null;

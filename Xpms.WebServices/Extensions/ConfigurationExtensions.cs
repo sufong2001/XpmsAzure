@@ -1,4 +1,5 @@
-﻿using Funq;
+﻿using System;
+using Funq;
 using ServiceStack.Authentication.OpenId;
 using ServiceStack.Configuration;
 using ServiceStack.ServiceHost;
@@ -44,10 +45,11 @@ namespace Xpms.WebServices.Extensions
         public static void RegisterRequestModels<T>(this IServiceRoutes routes, Assembly assemble = null
             , string removePrefix = " " , string removePostfix ="Request", bool fullName = false)
         {
-            var requestModels = (assemble ?? typeof(T).Assembly)
-                .GetTypes()
-                .Where(type => (typeof(T).IsAssignableFrom(type) && type.IsClass && !type.IsAbstract)
-                    || type.IsSubclassOf(typeof(T))).ToArray();
+            var tType = typeof (T);
+
+            var requestModels = (assemble ?? tType.Assembly).GetTypes()
+                .Where(type => (tType.IsAssignableFrom(type) && type.IsClass && !type.IsAbstract)
+                    || type.IsSubclassOf(tType)).ToArray();
 
             foreach (var requestModel in requestModels)
             {
@@ -56,20 +58,40 @@ namespace Xpms.WebServices.Extensions
                                         .Replace(removePostfix, "")
                                         .SeperateCamelCase("-").ToLower();
 
-                routes.Add(requestModel
-                    , restPath
-                    , null);
+                routes.Add(requestModel , restPath , null);
             }
         }
 
-        public static void RegisterXpmsProcesses<T>(this Container container, Assembly assemble = null, ReuseScope reuse = ReuseScope.Hierarchy)
+        public static void RegisterProcesses<T>(this Container container, Assembly assemble = null, ReuseScope reuse = ReuseScope.Hierarchy)
         {
-            var processTypes = (assemble ?? typeof(T).Assembly)
-                .GetTypes()
-                .Where(type => (typeof(T).IsAssignableFrom(type) && type.IsClass && !type.IsAbstract)
-                    || type.IsSubclassOf(typeof(T))).ToArray();
+            var tType = typeof(T);
+            var processTypes = (assemble ?? tType.Assembly).GetTypes()
+                .Where(type => (tType.IsAssignableFrom(type) && type.IsClass && !type.IsAbstract)
+                    || type.IsSubclassOf(tType)).ToArray();
 
+            container.Register(c => c.Adapter);
             container.RegisterAutoWiredTypes(processTypes, reuse);
+        }
+
+        public static void RegisterDataRecords<T>(this Container container, Assembly assImplementation, Assembly assInterface = null)
+        {
+             var tType = typeof(T);
+            var interfaceTypes = (assInterface ?? tType.Assembly).GetTypes()
+                .Where(type => (type.IsInterface 
+                    && type.GetInterfaces().Any(i => i == tType)
+                    )).ToArray();
+
+            var implementationTypes = assImplementation.GetTypes()
+                .Where(type => (tType.IsAssignableFrom(type) 
+                    && type.IsClass && !type.IsAbstract
+                    )).ToArray();
+
+            foreach (Type t in implementationTypes)
+            {
+                container.RegisterAutoWiredType(t
+                    , interfaceTypes.FirstOrDefault(i => i.IsAssignableFrom(t))
+                   );
+            }
         }
     }
 }

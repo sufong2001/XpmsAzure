@@ -7,6 +7,7 @@ using Xpms.AzureRepository.Extensions;
 using Xpms.Core.Constants;
 using Xpms.Core.Exceptions;
 using Xpms.Core.IDB;
+using Xpms.Core.IDB.Data;
 using Xpms.Core.Models;
 
 namespace Xpms.AzureRepository.DAO
@@ -24,8 +25,9 @@ namespace Xpms.AzureRepository.DAO
 
         public string CreateUser(string email, string passwordHash, string salt, UserStatus status = UserStatus.Signup)
         {
-            var user = new UserData
+            var user = new User
             {
+                RowKey = Guid.NewGuid().ToString(),
                 Email = email,
                 PasswordHash = passwordHash,
                 Salt = salt,
@@ -35,11 +37,10 @@ namespace Xpms.AzureRepository.DAO
             return CreateUser(user);
         }
 
-        public string CreateUser(UserData userData)
+        public string CreateUser(IUserRecord userData)
         {
-            var user = userData.MapToTableEntity<User>();
-            user.PartitionKey = UsersTablePartition.User;
-            user.RowKey = Guid.NewGuid().ToString();
+            var user = userData as User;
+            if(user == null) throw new ArgumentException("Invalid User Type.");
 
             UsersTable.Insert(user);
 
@@ -61,21 +62,20 @@ namespace Xpms.AzureRepository.DAO
             return query.ToArray().FirstOrDefault();
         }
 
-        public UserData GetUserById(string id)
+        public IUserRecord GetUserById(string id)
         {
-            return GetUser(id).MapTo<UserData>();
+            return GetUser(id);
         }
 
-        public UserData GetUserByEmail(string email)
+        public IUserRecord GetUserByEmail(string email)
         {
-            return GetUser(email: email).MapTo<UserData>();
+            return GetUser(email: email);
         }
 
-        public void UpdateUser(UserData userData)
+        public void UpdateUser(IUserRecord userData)
         {
-            var user = userData.MapToTableEntity<User>();
-            user.PartitionKey = UsersTablePartition.User;
-            user.RowKey = userData.Id;
+            var user = userData as User;
+            if (user == null) throw new ArgumentException("Invalid User Type.");
 
             UsersTable.Update(user);
         }
@@ -105,15 +105,15 @@ namespace Xpms.AzureRepository.DAO
             return activation.RowKey;
         }
 
-        public ActivationData GetActivationRecord(string key)
+        public IActivationRecord GetActivationRecord(string key)
         {
             var query = (from r in UsersTable.AsQueryable<Activation>()
                          where r.PartitionKey == UsersTablePartition.UserActivation
                                && r.RowKey == key
                          select r).Take(1).ToArray();
 
-            ActivationData record = query.FirstOrDefault()
-                .MapTo<ActivationData>();
+            IActivationRecord record = query.FirstOrDefault()
+                .MapTo<IActivationRecord>();
 
             return record;
         }
@@ -145,7 +145,7 @@ namespace Xpms.AzureRepository.DAO
             return reset.RowKey;
         }
 
-        public PasswordResetData GetPasswordResetRecord(string key)
+        public IPasswordResetRecord GetPasswordResetRecord(string key)
         {
             var query = (from r in UsersTable.AsQueryable<PasswordReset>()
                          where r.PartitionKey == UsersTablePartition.UserPasswordReset
@@ -153,8 +153,8 @@ namespace Xpms.AzureRepository.DAO
                                && r.ExpiryDate > DateTime.UtcNow
                          select r).Take(1).ToArray();
 
-            PasswordResetData record = query.FirstOrDefault()
-                .MapTo<PasswordResetData>();
+            IPasswordResetRecord record = query.FirstOrDefault()
+                .MapTo<IPasswordResetRecord>();
 
             return record;
         }

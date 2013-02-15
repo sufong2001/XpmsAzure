@@ -1,18 +1,21 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
+﻿using J.F.Libs.Extensions;
+using Microsoft.WindowsAzure.Storage.Table;
 using Xpms.AzureRepository.Constants;
-using Xpms.Core.Constants;
+using Xpms.Core.IDB.Data;
 
 namespace Xpms.AzureRepository.EntityModels
 {
-    public class User : TableEntity
+    public class User : TableEntity, IUserRecord
     {
         public User()
         {
             this.PartitionKey = UsersTablePartition.User;
         }
 
-        public string Id { 
+        public string Id
+        {
             get { return this.RowKey; }
+            set { this.RowKey = value; }
         }
 
         public string OpenIds { get; set; }
@@ -34,5 +37,12 @@ namespace Xpms.AzureRepository.EntityModels
         public int Status { get; set; }
 
         public string Roles { get; set; }
+
+        public bool HasOpenId(string openId)
+        {
+            if (OpenIds == null) return false;
+
+            return OpenIds.JsonArrayConatins(openId);
+        }
     }
 }

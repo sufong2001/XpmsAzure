@@ -1,4 +1,5 @@
 ﻿using Xpms.Core.Constants;
+using Xpms.Core.IDB.Data;
 using Xpms.Core.Models;
 
 namespace Xpms.Core.IDB
@@ -11,25 +12,25 @@ namespace Xpms.Core.IDB
 
         string CreateUser(string email, string passwordHash, string salt, UserStatus status = UserStatus.Signup);
 
-        string CreateUser(UserData userData);
+        string CreateUser(IUserRecord userData);
 
         void DeleteActivationRecord(string userId);
 
         void DeletePasswordResetRecord(string userId);
 
-        ActivationData GetActivationRecord(string hash);
+        IActivationRecord GetActivationRecord(string hash);
 
-        PasswordResetData GetPasswordResetRecord(string hash);
+        IPasswordResetRecord GetPasswordResetRecord(string hash);
 
-        UserData GetUserByEmail(string email);
+        IUserRecord GetUserByEmail(string email);
 
-        UserData GetUserById(string id);
+        IUserRecord GetUserById(string id);
 
         void UpdatePasswordByEmail(string email, string passwordHash, string salt, UserStatus status = UserStatus.Activated);
 
         void UpdatePasswordByUserId(string userId, string passwordHash, string salt, UserStatus status = UserStatus.Activated);
 
-        void UpdateUser(UserData userData);
+        void UpdateUser(IUserRecord userData);
 
         void UpdateUserStatus(string userId, UserStatus status);
     }

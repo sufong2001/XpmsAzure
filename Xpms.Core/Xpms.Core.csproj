@@ -33,13 +33,22 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=2.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.2.2.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.3.9.35\lib\net35\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Common.3.9.35\lib\net35\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.3.9.35\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\UserEmailAlreadyExistsException.cs" />
@@ -49,25 +58,24 @@
     <Compile Include="Exceptions\InvalidUserException.cs" />
     <Compile Include="Exceptions\InvalidUserResetException.cs" />
     <Compile Include="Exceptions\UserAlreadyExistsException.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="IBusinessProcess.cs" />
     <Compile Include="IDB\IRepoData.cs" />
-    <Compile Include="Models\ActivationData.cs" />
+    <Compile Include="IDB\Data\IActivationRecord.cs" />
     <Compile Include="Models\Requests\IRequest.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="IDB\IRepoAccounts.cs" />
     <Compile Include="IDB\IRepository.cs" />
     <Compile Include="IDB\IRepoUsers.cs" />
     <Compile Include="ISecurity\IAuth.cs" />
-    <Compile Include="Models\PasswordResetData.cs" />
+    <Compile Include="IDB\Data\IPasswordResetRecord.cs" />
     <Compile Include="Models\Requests\PasswordReset.cs" />
     <Compile Include="Models\Requests\Signup.cs" />
-    <Compile Include="Models\UserData.cs" />
+    <Compile Include="IDB\Data\IUserRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\J.F.Libs\J.F.Libs.csproj">
-      <Project>{77a58e46-80b1-449c-a4cb-2d9ee0c425d1}</Project>
-      <Name>J.F.Libs</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

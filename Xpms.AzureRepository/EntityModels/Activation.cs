@@ -1,10 +1,10 @@
 ﻿using Microsoft.WindowsAzure.Storage.Table;
-using System;
 using Xpms.AzureRepository.Constants;
+using Xpms.Core.IDB.Data;
 
 namespace Xpms.AzureRepository.EntityModels
 {
-    public class Activation : TableEntity
+    public class Activation : TableEntity, IActivationRecord
     {
         public Activation()
         {

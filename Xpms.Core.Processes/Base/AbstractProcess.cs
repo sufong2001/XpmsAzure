@@ -1,4 +1,6 @@
-﻿using Xpms.Core.IDB;
+﻿using AutoMapper;
+using ServiceStack.Configuration;
+using Xpms.Core.IDB;
 using Xpms.Core.ISecurity;
 
 namespace Xpms.Core.Processes.Base
@@ -11,5 +13,6 @@ namespace Xpms.Core.Processes.Base
 
         public IAuth Auth { get; set; }
 
+        public IContainerAdapter IoC { get; set; }
     }
 }

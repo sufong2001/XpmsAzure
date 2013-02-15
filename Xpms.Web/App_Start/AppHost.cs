@@ -2,15 +2,18 @@ using Funq;
 using ServiceStack.CacheAccess;
 using ServiceStack.CacheAccess.Providers;
 using ServiceStack.Razor;
+using ServiceStack.ServiceInterface.Validation;
 using ServiceStack.WebHost.Endpoints;
 using System.Net;
 using Xpms.AzureRepository;
 using Xpms.Core.IDB;
 using Xpms.Core.ISecurity;
+using Xpms.Core.Models.Requests;
 using Xpms.Core.Processes.Base;
 using Xpms.WebServices;
 using Xpms.WebServices.Auth;
 using Xpms.WebServices.Extensions;
+using Xpms.WebServices.Validators;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(Xpms.Web.App_Start.AppHost), "Start")]
 /**
@@ -41,6 +44,7 @@ namespace Xpms.Web.App_Start
 
             SetConfig(new EndpointHostConfig
             {
+                DebugMode = true,
                 CustomHttpHandlers = {
                     { HttpStatusCode.NotFound, new RazorHandler("/notfound") },
                     { HttpStatusCode.Unauthorized, new RazorHandler("/login") }
@@ -51,6 +55,7 @@ namespace Xpms.Web.App_Start
 
             RegisterDependencies(container);
 
+            Plugins.Add(new ValidationFeature());
             Plugins.Add(new RazorFormat());
             Plugins.ConfigAuth(container);
         }
@@ -62,7 +67,10 @@ namespace Xpms.Web.App_Start
             container.Register<IAuth>(new PasswordAuth());
             container.Register<IRepository>(AzureStorage.CreateSingleton());
             container.RegisterAutoWired<XpmsAuthProvider>().ReusedWithin(ReuseScope.Hierarchy);
-            container.RegisterXpmsProcesses<AbstractProcess>();
+            container.RegisterProcesses<AbstractProcess>();
+            container.RegisterValidators(typeof(SignupRequestValidator).Assembly);
+            container.RegisterDataRecords<IRepoData>(typeof(AzureStorage).Assembly);
+
         }
     }
 }

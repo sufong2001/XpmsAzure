@@ -1,6 +1,4 @@
 ﻿namespace Xpms.Core.Models.Requests
 {
-    public interface IRequest
-    {
-    }
+    public interface IRequest { }
 }

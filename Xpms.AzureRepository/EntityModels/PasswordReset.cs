@@ -1,10 +1,11 @@
 ﻿using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using Xpms.AzureRepository.Constants;
+using Xpms.Core.IDB.Data;
 
 namespace Xpms.AzureRepository.EntityModels
 {
-    public class PasswordReset : TableEntity
+    public class PasswordReset : TableEntity, IPasswordResetRecord
     {
         public PasswordReset()
         {

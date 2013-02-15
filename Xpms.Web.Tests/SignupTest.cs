@@ -104,7 +104,7 @@ namespace Xpms.Web.Tests
         public void TestSingnup()
         {
             var respond = ServiceClient.Post<object>("/signup"
-                , new SignupRequest { Email = "sufong", Password = "1234" });
+                , new SignupRequest { Email = "sufong", Password = "1234", ConfirmPassword = "1234" });
 
             Assert.AreEqual(respond, respond);
         }
@@ -114,7 +114,7 @@ namespace Xpms.Web.Tests
         public void TestSingnupActivation()
         {
             var respond = ServiceClient.Patch<string>("/signup"
-                , new SignupRequest {  Email = "sufong2001@gmail.com", Password = "gmail123" });
+                , new SignupRequest { Email = "sufong2001@gmail.com", Password = "gmail123", ConfirmPassword = "gmail123" });
 
             respond = ServiceClient.Get<string>("/signup-activation?activationKey=" + respond);
 

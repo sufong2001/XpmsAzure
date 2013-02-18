@@ -12,21 +12,6 @@ namespace Xpms.Core.Constants
         Deactivated
     }
 
-    public enum SignupStage
-    {
-        Request,
-        OpenAuthRequest,
-        Activation,
-        Cancellation
-    }
-
-    public enum PasswordResetStage
-    {
-        Request,
-        Verification,
-        Reset
-    }
-
     [Flags]
     public enum UserRoles
     {

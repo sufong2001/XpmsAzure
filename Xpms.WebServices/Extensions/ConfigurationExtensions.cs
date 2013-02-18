@@ -1,18 +1,18 @@
-﻿using System;
-using Funq;
+﻿using Funq;
+using J.F.Libs.Extensions;
 using ServiceStack.Authentication.OpenId;
 using ServiceStack.Configuration;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.WebHost.Endpoints;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Xpms.Core.IDB;
 using Xpms.Core.Models.Requests;
 using Xpms.WebServices.Auth;
-using J.F.Libs.Extensions;
 
 namespace Xpms.WebServices.Extensions
 {
@@ -43,9 +43,9 @@ namespace Xpms.WebServices.Extensions
         }
 
         public static void RegisterRequestModels<T>(this IServiceRoutes routes, Assembly assemble = null
-            , string removePrefix = " " , string removePostfix ="Request", bool fullName = false)
+            , string removePrefix = " ", string removePostfix = "Request", bool fullName = false)
         {
-            var tType = typeof (T);
+            var tType = typeof(T);
 
             var requestModels = (assemble ?? tType.Assembly).GetTypes()
                 .Where(type => (tType.IsAssignableFrom(type) && type.IsClass && !type.IsAbstract)
@@ -58,7 +58,7 @@ namespace Xpms.WebServices.Extensions
                                         .Replace(removePostfix, "")
                                         .SeperateCamelCase("-").ToLower();
 
-                routes.Add(requestModel , restPath , null);
+                routes.Add(requestModel, restPath, null);
             }
         }
 
@@ -75,14 +75,14 @@ namespace Xpms.WebServices.Extensions
 
         public static void RegisterDataRecords<T>(this Container container, Assembly assImplementation, Assembly assInterface = null)
         {
-             var tType = typeof(T);
+            var tType = typeof(T);
             var interfaceTypes = (assInterface ?? tType.Assembly).GetTypes()
-                .Where(type => (type.IsInterface 
+                .Where(type => (type.IsInterface
                     && type.GetInterfaces().Any(i => i == tType)
                     )).ToArray();
 
             var implementationTypes = assImplementation.GetTypes()
-                .Where(type => (tType.IsAssignableFrom(type) 
+                .Where(type => (tType.IsAssignableFrom(type)
                     && type.IsClass && !type.IsAbstract
                     )).ToArray();
 

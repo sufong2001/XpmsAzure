@@ -5,7 +5,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceStack.ServiceClient.Web;
 using ServiceStack.Service;
 using System.Collections;
-using System.Linq;
 using ServiceStack.ServiceInterface.Auth;
 using Xpms.Core.Models;
 using Xpms.Core.Constants;

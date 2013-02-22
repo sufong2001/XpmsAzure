@@ -1,4 +1,5 @@
 using Funq;
+using Microsoft.WindowsAzure.ServiceRuntime;
 using ServiceStack.CacheAccess;
 using ServiceStack.CacheAccess.Providers;
 using ServiceStack.Razor;
@@ -65,7 +66,9 @@ namespace Xpms.Web.App_Start
             //Register all your dependencies
             container.Register<ICacheClient>(new MemoryCacheClient());
             container.Register<IAuth>(new PasswordAuth());
-            container.Register<IRepository>(AzureStorage.CreateSingleton());
+            container.Register<IRepository>(AzureStorage.CreateSingleton(
+                RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString")
+                ));
             container.RegisterAutoWired<XpmsAuthProvider>().ReusedWithin(ReuseScope.Hierarchy);
             container.RegisterProcesses<AbstractProcess>();
             container.RegisterValidators(typeof(SignupRequestValidator).Assembly);

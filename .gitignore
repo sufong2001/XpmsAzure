@@ -213,3 +213,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+Web.Debug.config
+Web.Release.config
+/XpmsAzureWebsite/Properties/PublishProfiles

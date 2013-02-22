@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J.F.Libs", "J.F.Libs\J.F.Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xpms.Core.Processes", "Xpms.Core.Processes\Xpms.Core.Processes.csproj", "{ABAA1095-C256-4FF7-9E7F-0851747F3D74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpmsAzureWebsite", "XpmsAzureWebsite\XpmsAzureWebsite.csproj", "{F509A644-7063-42A2-B062-45E370F3A8C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{ABAA1095-C256-4FF7-9E7F-0851747F3D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABAA1095-C256-4FF7-9E7F-0851747F3D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABAA1095-C256-4FF7-9E7F-0851747F3D74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F509A644-7063-42A2-B062-45E370F3A8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F509A644-7063-42A2-B062-45E370F3A8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F509A644-7063-42A2-B062-45E370F3A8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F509A644-7063-42A2-B062-45E370F3A8C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7B690FEE-DBD7-4732-82F6-F38481E9CFC1} = {C4CB6633-E1E9-41FD-8508-8FEF731411D2}
 		{21DC4F3C-0F34-42E9-8EEC-1FC95FDA1654} = {C4CB6633-E1E9-41FD-8508-8FEF731411D2}
+		{F509A644-7063-42A2-B062-45E370F3A8C8} = {C4CB6633-E1E9-41FD-8508-8FEF731411D2}
 		{BF7131E6-37C5-4AF3-96DE-FC64F83780FF} = {85158385-A225-4D9B-83FA-F8E7E14C87F3}
 	EndGlobalSection
 EndGlobal

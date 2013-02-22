@@ -11,6 +11,8 @@ namespace Xpms.Core.Processes.Base
 
         public IRepoUsers RepoUsers { get { return Repository.RepoUsers; } }
 
+        public IRepoEvents RepoEvents { get { return Repository.RepoEvents; } }
+
         public IAuth Auth { get; set; }
 
         public IContainerAdapter IoC { get; set; }

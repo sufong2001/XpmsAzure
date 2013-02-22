@@ -3,8 +3,8 @@
   <Role name="Xpms.Web">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
-      <Setting name="StorageConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=xpms;AccountKey=QfwYobiGghocow8yz02n3fe47K/I9MZRZqHeM3IBdILiDXq/19TgCFt0KnCcIi0e211GmuAn7YHEmYAiRcsTjA==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=xpms;AccountKey=QfwYobiGghocow8yz02n3fe47K/I9MZRZqHeM3IBdILiDXq/19TgCFt0KnCcIi0e211GmuAn7YHEmYAiRcsTjA==" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

@@ -50,11 +50,13 @@
       <HintPath>..\packages\ServiceStack.Text.3.9.37\lib\net35\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountProcess.cs" />
     <Compile Include="Base\AbstractProcess.cs" />
+    <Compile Include="EventProcess.cs" />
     <Compile Include="EmailProcess.cs" />
     <Compile Include="PasswordResetProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

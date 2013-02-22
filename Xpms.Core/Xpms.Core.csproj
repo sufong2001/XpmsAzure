@@ -63,8 +63,12 @@
     <Compile Include="Exceptions\UserAlreadyExistsException.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="IBusinessProcess.cs" />
+    <Compile Include="IDB\Data\IEventRecord.cs" />
     <Compile Include="IDB\IRepoData.cs" />
     <Compile Include="IDB\Data\IActivationRecord.cs" />
+    <Compile Include="IDB\IRepoEvents.cs" />
+    <Compile Include="Models\Requests\Debug.cs" />
+    <Compile Include="Models\Requests\Event.cs" />
     <Compile Include="Models\Requests\IRequest.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="IDB\IRepoAccounts.cs" />
@@ -78,6 +82,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

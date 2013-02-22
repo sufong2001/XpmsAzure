@@ -9,12 +9,19 @@ namespace Xpms.AzureRepository
 {
     public class AzureStorage : IRepository
     {
+
+        internal string StorageConnectionString { get; set; }
+
         internal CloudTable TableUsers { get; set; }
+        internal CloudTable TableEvents { get; set; }
 
         public IRepoUsers RepoUsers { get; set; }
+        public IRepoEvents RepoEvents { get; set; }
 
-        private AzureStorage()
+        private AzureStorage(string connectionString)
         {
+            StorageConnectionString = connectionString;
+
             CreateStorageIfNotExists();
 
             RepoUsers = new DaoUsers(this);
@@ -22,11 +29,16 @@ namespace Xpms.AzureRepository
 
         private static AzureStorage SingleAzureStorage { get; set; }
 
-        public static AzureStorage CreateSingleton()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connectionString">RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString")</param>
+        /// <returns></returns>
+        public static AzureStorage CreateSingleton(string connectionString)
         {
             if (SingleAzureStorage == null)
             {
-                SingleAzureStorage = new AzureStorage();
+                SingleAzureStorage = new AzureStorage(connectionString);
             }
 
             return SingleAzureStorage;
@@ -34,14 +46,19 @@ namespace Xpms.AzureRepository
 
         private void CreateStorageIfNotExists()
         {
-            var storageAccount = CloudStorageAccount.Parse(RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString"));
+            var storageAccount = CloudStorageAccount.Parse(StorageConnectionString);
 
             // If this is running in a Windows Azure Web Site (not a Cloud Service) use the Web.config file:
             //    var storageAccount = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings["StorageConnectionString"].ConnectionString);
 
             var tableClient = storageAccount.CreateCloudTableClient();
+            
             TableUsers = tableClient.GetTableReference(XpmsTable.Users);
             TableUsers.CreateIfNotExists();
+
+            TableEvents = tableClient.GetTableReference(XpmsTable.Events);
+            TableEvents.CreateIfNotExists();
+
 
             //var blobClient = storageAccount.CreateCloudBlobClient();
             //var blobContainer = blobClient.GetContainerReference("azuremailblobcontainer");

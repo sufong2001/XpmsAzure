@@ -63,6 +63,7 @@
     <Compile Include="Auth\PasswordAuth.cs" />
     <Compile Include="Auth\XpmsAuthProvider.cs" />
     <Compile Include="Auth\YahooOpenIdOAuthExProvider.cs" />
+    <Compile Include="Debug.cs" />
     <Compile Include="Validators.cs" />
     <Compile Include="Extensions\AuthSessionExtensions.cs" />
     <Compile Include="Extensions\ConfigurationExtensions.cs" />

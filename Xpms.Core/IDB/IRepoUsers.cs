@@ -24,6 +24,10 @@ namespace Xpms.Core.IDB
 
         IUserRecord GetUserByEmail(string email);
 
+        IUserRecord GetUserByUserName(string userName);
+
+        IUserRecord GetUserByUserNameOrEmail(string userName, string email);
+
         IUserRecord GetUserById(string id);
 
         void UpdatePasswordByEmail(string email, string passwordHash, string salt, UserStatus status = UserStatus.Activated);

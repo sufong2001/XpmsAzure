@@ -2,6 +2,8 @@
 {
     public class SignupRequest : IRequest
     {
+        public string UserName { get; set; }
+
         public string Email { get; set; }
 
         public string Password { get; set; }
@@ -9,7 +11,7 @@
         public string ConfirmPassword { get; set; }
     }
 
-    public class SignupWithOpenIdRequest : SignupRequest
+    public class SignupWithOpenidRequest : SignupRequest
     {
         public string UserId { get; set; }
 

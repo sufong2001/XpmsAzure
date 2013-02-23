@@ -13,6 +13,7 @@ using System.Reflection;
 using Xpms.Core.IDB;
 using Xpms.Core.Models.Requests;
 using Xpms.WebServices.Auth;
+using Xpms.WebServices.IoC;
 
 namespace Xpms.WebServices.Extensions
 {
@@ -69,7 +70,9 @@ namespace Xpms.WebServices.Extensions
                 .Where(type => (tType.IsAssignableFrom(type) && type.IsClass && !type.IsAbstract)
                     || type.IsSubclassOf(tType)).ToArray();
 
-            container.Register(c => c.Adapter);
+            var iocAdapter = container.Adapter ?? new IocContainerAdapter(container);
+
+            container.Register(iocAdapter);
             container.RegisterAutoWiredTypes(processTypes, reuse);
         }
 

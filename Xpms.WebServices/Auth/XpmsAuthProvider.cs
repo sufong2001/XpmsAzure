@@ -17,7 +17,9 @@ namespace Xpms.WebServices.Auth
 
         public override bool TryAuthenticate(IServiceBase authService, string userName, string password)
         {
-            var user = Repository.RepoUsers.GetUserByEmail(userName);
+            var user = Repository.RepoUsers.GetUserByUserNameOrEmail(userName, userName);
+
+            if (user == null) return false;
             //Add here your custom auth logic (database calls etc)
             //Return true if credentials are valid, otherwise false
             return Auth.VerifyHashString(password, user.PasswordHash, user.Salt);
@@ -25,9 +27,9 @@ namespace Xpms.WebServices.Auth
 
         protected override void LoadUserAuthInfo(AuthUserSession userSession, IOAuthTokens tokens, Dictionary<string, string> authInfo)
         {
-            var user = Repository.RepoUsers.GetUserByEmail(userSession.UserAuthName);
+            var user = Repository.RepoUsers.GetUserByUserNameOrEmail(userSession.UserAuthName, userSession.UserAuthName);
             userSession.Email = user.Email;
-            userSession.UserName = user.Email;
+            userSession.UserName = user.UserName;
 
             base.LoadUserAuthInfo(userSession, tokens, authInfo);
         }

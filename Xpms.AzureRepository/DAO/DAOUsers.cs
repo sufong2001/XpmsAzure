@@ -27,7 +27,6 @@ namespace Xpms.AzureRepository.DAO
         {
             var user = new User
             {
-                RowKey = Guid.NewGuid().ToString(),
                 Email = email,
                 PasswordHash = passwordHash,
                 Salt = salt,
@@ -42,29 +41,45 @@ namespace Xpms.AzureRepository.DAO
             var user = userData as User;
             if(user == null) throw new ArgumentException("Invalid User Type.");
 
+            user.RowKey = Guid.NewGuid().ToString();
+
             UsersTable.Insert(user);
 
             return user.Id;
         }
 
-        private User GetUser(string userId = null, string email = null)
+        private User GetUser(string userId = null, string userName = null, string email = null)
         {
-            IQueryable<User> query;
-            if (userId != null)
-                query = UsersTable.AsQueryable<User>()
-                         .Where(u => u.PartitionKey == UsersTablePartition.User
-                             && u.RowKey == userId);
-            else
-                query = UsersTable.AsQueryable<User>()
-                         .Where(u => u.PartitionKey == UsersTablePartition.User
-                             && u.Email == email).Take(1);
+            var query = from u in UsersTable.AsQueryable<User>()
+                        where u.PartitionKey == UsersTablePartition.User
+                        select u;
 
-            return query.ToArray().FirstOrDefault();
+            if (userName != null && email != null)
+                query = query.Where(u => u.UserName == userName || u.Email == email);
+            else if (userName != null)
+                query = query.Where(u => u.UserName == userName);
+            else if (email != null)
+                query = query.Where(u => u.Email == email);
+            else
+                query = query.Where(u => u.RowKey == userId);
+
+
+            return query.FirstOrDefault();
         }
 
         public IUserRecord GetUserById(string id)
         {
             return GetUser(id);
+        }
+
+        public IUserRecord GetUserByUserName(string userName)
+        {
+            return GetUser(userName: userName);
+        }
+
+        public IUserRecord GetUserByUserNameOrEmail(string userName, string email)
+        {
+            return GetUser(userName: userName, email: email);
         }
 
         public IUserRecord GetUserByEmail(string email)
@@ -107,10 +122,10 @@ namespace Xpms.AzureRepository.DAO
 
         public IActivationRecord GetActivationRecord(string key)
         {
-            var query = (from r in UsersTable.AsQueryable<Activation>()
+            var query = from r in UsersTable.AsQueryable<Activation>()
                          where r.PartitionKey == UsersTablePartition.UserActivation
                                && r.RowKey == key
-                         select r).Take(1).ToArray();
+                         select r;
 
             IActivationRecord record = query.FirstOrDefault()
                 .MapTo<IActivationRecord>();
@@ -147,11 +162,11 @@ namespace Xpms.AzureRepository.DAO
 
         public IPasswordResetRecord GetPasswordResetRecord(string key)
         {
-            var query = (from r in UsersTable.AsQueryable<PasswordReset>()
+            var query = from r in UsersTable.AsQueryable<PasswordReset>()
                          where r.PartitionKey == UsersTablePartition.UserPasswordReset
                                && r.RowKey == key
                                && r.ExpiryDate > DateTime.UtcNow
-                         select r).Take(1).ToArray();
+                         select r;
 
             IPasswordResetRecord record = query.FirstOrDefault()
                 .MapTo<IPasswordResetRecord>();

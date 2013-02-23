@@ -7,7 +7,7 @@ namespace Xpms.Web.Tests
 {
     public class Config
     {
-        public const string AbsoluteBaseUri = "http://127.0.0.1:81/";
+        public const string AbsoluteBaseUri = "http://localhost:51600";
         public const string ServiceStackBaseUri = AbsoluteBaseUri;
     }
 }

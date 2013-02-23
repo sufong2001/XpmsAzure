@@ -11,14 +11,19 @@ namespace Xpms.Core.Processes
     {
         public string Register(SignupRequest signup)
         {
-            var user = RepoUsers.GetUserByEmail(signup.Email);
+            var user = RepoUsers.GetUserByUserNameOrEmail(signup.UserName, signup.Email);
 
-            if (user != null) throw new UserEmailAlreadyExistsException();
+            if (user != null) throw new UserAlreadyExistsException();
 
             string hash, salt;
             Auth.GetHashAndSaltString(signup.Password, out hash, out salt);
 
-            var userId = RepoUsers.CreateUser(signup.Email, hash, salt);
+            user = IoC.Resolve<IUserRecord>();
+            user.Email = signup.Email;
+            user.UserName = signup.UserName;
+            user.PasswordHash = hash;
+            user.Salt = salt;
+            var userId = RepoUsers.CreateUser(user);
 
             Auth.GetHashAndSaltString(userId, out hash, out salt);
 
@@ -27,17 +32,18 @@ namespace Xpms.Core.Processes
             return key;
         }
 
-        public string RegisterOpenAuth(SignupWithOpenIdRequest signup)
+        public string RegisterOpenAuth(SignupWithOpenidRequest signup)
         {
-            var user = RepoUsers.GetUserByEmail(signup.Email);
+            var user = RepoUsers.GetUserByUserNameOrEmail(signup.UserName, signup.Email);
 
-            if (user != null) throw new UserEmailAlreadyExistsException();
+            if (user != null) throw new UserAlreadyExistsException();
 
             string hash, salt;
             Auth.GetHashAndSaltString(signup.Password, out hash, out salt);
 
             user = IoC.Resolve<IUserRecord>();
             user.OpenIds = signup.UserId.ToJsonArray();
+            user.UserName = signup.UserName;
             user.Email = signup.Email;
             user.DisplayName = signup.DisplayName;
             user.FirstName = signup.FirstName;

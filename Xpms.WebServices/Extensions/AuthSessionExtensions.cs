@@ -14,7 +14,7 @@ namespace Xpms.WebServices.Extensions
 {
     public static class AuthSessionExtensions
     {
-        public static SignupWithOpenIdRequest GetOpenAuthSignupRequest(this IAuthSession session)
+        public static SignupWithOpenidRequest GetOpenAuthSignupRequest(this IAuthSession session)
         {
             var token = session.ProviderOAuthAccess.LastOrDefault();
 
@@ -22,9 +22,10 @@ namespace Xpms.WebServices.Extensions
 
             var pass = session.CreatedAt.ToString();
 
-            return new SignupWithOpenIdRequest
+            return new SignupWithOpenidRequest
                 {
                    UserId =  token.UserId,
+                   UserName = session.UserName,
                    Email = session.Email,
                    Password = pass,
                    ConfirmPassword = pass,

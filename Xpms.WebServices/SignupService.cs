@@ -15,7 +15,7 @@ namespace Xpms.WebServices
             return key;
         }
 
-        public object Any(SignupWithOpenIdRequest request)
+        public object Any(SignupWithOpenidRequest request)
         {
             request = this.GetSession()
                           .GetOpenAuthSignupRequest();

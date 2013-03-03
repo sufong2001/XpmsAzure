@@ -1,18 +1,21 @@
 using Funq;
 using ServiceStack.CacheAccess;
 using ServiceStack.CacheAccess.Providers;
+using ServiceStack.Logging;
+using ServiceStack.Logging.Log4Net;
 using ServiceStack.Razor;
 using ServiceStack.ServiceInterface.Validation;
 using ServiceStack.WebHost.Endpoints;
 using System.Configuration;
-using System.Net;
 using Xpms.AzureRepository;
 using Xpms.Core.IDB;
 using Xpms.Core.ISecurity;
+using Xpms.Core.Mails;
 using Xpms.Core.Processes.Base;
 using Xpms.WebServices;
 using Xpms.WebServices.Auth;
 using Xpms.WebServices.Extensions;
+using Xpms.WebServices.Mail;
 using Xpms.WebServices.Validators;
 using XpmsAzureWebsite.App_Start;
 
@@ -38,19 +41,21 @@ namespace XpmsAzureWebsite.App_Start
 
             SetConfig(new EndpointHostConfig
             {
-                DebugMode = true,
-                CustomHttpHandlers = {
-                    { HttpStatusCode.NotFound, new RazorHandler("/notfound") },
-                    { HttpStatusCode.Unauthorized, new RazorHandler("/login") }
-                }
+                //DebugMode = true,
+                //CustomHttpHandlers = {
+                //    { HttpStatusCode.NotFound, new RazorHandler("/notfound") },
+                //    { HttpStatusCode.Unauthorized, new RazorHandler("/login") }
+                //}
             });
+
+            LogManager.LogFactory = new Log4NetFactory(true);
 
             Routes.ConfigRoutes();
 
             RegisterDependencies(container);
 
             Plugins.Add(new ValidationFeature());
-            Plugins.Add(new RazorFormat());
+            Plugins.Add(RazorFormat.Instance);
             Plugins.ConfigAuth(container);
         }
 
@@ -62,7 +67,10 @@ namespace XpmsAzureWebsite.App_Start
             container.Register<IRepository>(AzureStorage.CreateSingleton(
                 ConfigurationManager.ConnectionStrings["StorageConnectionString"].ConnectionString
                 ));
+
             container.RegisterAutoWired<XpmsAuthProvider>().ReusedWithin(ReuseScope.Hierarchy);
+            container.RegisterAutoWiredAs<Mailer, IMailer>().ReusedWithin(ReuseScope.Hierarchy);
+            
             container.RegisterProcesses<AbstractProcess>();
             container.RegisterValidators(typeof(SignupRequestValidator).Assembly);
             container.RegisterDataRecords<IRepoData>(typeof(AzureStorage).Assembly);

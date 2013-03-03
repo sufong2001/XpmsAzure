@@ -1,5 +1,6 @@
 ﻿using Microsoft.WindowsAzure.ServiceRuntime;
 using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Queue;
 using Microsoft.WindowsAzure.Storage.Table;
 using Xpms.AzureRepository.Constants;
 using Xpms.AzureRepository.DAO;
@@ -14,6 +15,7 @@ namespace Xpms.AzureRepository
 
         internal CloudTable TableUsers { get; set; }
         internal CloudTable TableEvents { get; set; }
+        internal CloudQueue QueueMailout { get; set; }
 
         public IRepoUsers RepoUsers { get; set; }
         public IRepoEvents RepoEvents { get; set; }
@@ -59,14 +61,13 @@ namespace Xpms.AzureRepository
             TableEvents = tableClient.GetTableReference(XpmsTable.Events);
             TableEvents.CreateIfNotExists();
 
+            var queueClient = storageAccount.CreateCloudQueueClient();
+            QueueMailout = queueClient.GetQueueReference(XpmsQueue.Mailouts);
+            QueueMailout.CreateIfNotExists();
 
             //var blobClient = storageAccount.CreateCloudBlobClient();
             //var blobContainer = blobClient.GetContainerReference("azuremailblobcontainer");
             //blobContainer.CreateIfNotExists();
-
-            //var queueClient = storageAccount.CreateCloudQueueClient();
-            //var subscribeQueue = queueClient.GetQueueReference("azuremailsubscribequeue");
-            //subscribeQueue.CreateIfNotExists();
         }
     }
 }

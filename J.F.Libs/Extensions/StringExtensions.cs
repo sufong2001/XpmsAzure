@@ -7,9 +7,18 @@ namespace J.F.Libs.Extensions
 {
     public static class StringExtensions
     {
+        public static TOutput ConvertTo<TOutput>(this string val, TOutput defaultValue)
+        {
+            if (string.IsNullOrEmpty(val)) 
+                return defaultValue;
+
+            return ConvertTo<TOutput>(val);
+        }
+
         public static TOutput ConvertTo<TOutput>(this string val)
         {
-            if (string.IsNullOrEmpty(val)) return default(TOutput);
+            if (string.IsNullOrEmpty(val)) 
+                return default(TOutput);
 
             Type t = typeof(TOutput);
             Type u = Nullable.GetUnderlyingType(t);
@@ -86,6 +95,16 @@ namespace J.F.Libs.Extensions
         public static string SeperateCamelCase(this string value, string format = " ")
         {
             return Regex.Replace(value, @"([A-Z])(?<=[a-z]\1|[A-Za-z]\1(?=[a-z]))", format + "$1");
+        }
+
+        public static bool IsNullOrEmpty(this string val)
+        {
+            return string.IsNullOrEmpty(val);
+        }
+
+        public static bool IsValidEmail(this string val)
+        {
+            return Regex.IsMatch(val, @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$");
         }
     }
 }

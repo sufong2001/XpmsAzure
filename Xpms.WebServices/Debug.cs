@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ServiceStack.ServiceInterface;
+using ServiceStack.Razor;
 using Xpms.Core.Models.Requests;
 using Xpms.Core.Processes;
 using Xpms.WebServices.Extensions;

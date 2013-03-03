@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using DotNetOpenAuth.OpenId.Extensions.AttributeExchange;
+﻿using DotNetOpenAuth.OpenId.Extensions.AttributeExchange;
 using DotNetOpenAuth.OpenId.Extensions.SimpleRegistration;
 using DotNetOpenAuth.OpenId.RelyingParty;
+using J.F.Libs.Extensions;
 using ServiceStack.Authentication.OpenId;
 using ServiceStack.Configuration;
-using ServiceStack.Common.Extensions;
 using ServiceStack.ServiceInterface.Auth;
-using ServiceStack.ServiceInterface.ServiceModel;
+using System.Collections.Generic;
+using System.Globalization;
 using Xpms.Core.IDB;
-using J.F.Libs.Extensions;
 using Xpms.WebServices.Extensions;
 
 namespace Xpms.WebServices.Auth
@@ -35,9 +33,9 @@ namespace Xpms.WebServices.Auth
             // This is where you would look for any OpenID extension responses included
             // in the authentication assertion.
             var claimsResponse = response.GetExtension<ClaimsResponse>();
-            
+
             claimsResponse.PatchCulture(); // Patch the Culture Object conversion issue
-            
+
             var authInfo = claimsResponse.ToDictionary();
 
             authInfo["user_id"] = response.ClaimedIdentifier; //a url

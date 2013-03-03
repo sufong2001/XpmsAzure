@@ -2,7 +2,7 @@
 using Xpms.Core.Models.Requests;
 using Xpms.Core.Processes;
 
-namespace Xpms.WebServices
+namespace Xpms.WebServices.Services
 {
     public class PasswordResetService : Service
     {

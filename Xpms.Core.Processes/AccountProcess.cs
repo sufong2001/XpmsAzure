@@ -7,8 +7,5 @@ namespace Xpms.Core.Processes
     {
         public IRepository Repository { get; set; }
 
-        public EmailProcess Email { get; set; }
-
-
     }
 }

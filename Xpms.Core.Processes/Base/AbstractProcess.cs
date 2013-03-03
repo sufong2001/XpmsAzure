@@ -1,7 +1,8 @@
-﻿using AutoMapper;
-using ServiceStack.Configuration;
+﻿using ServiceStack.Configuration;
+using ServiceStack.Logging;
 using Xpms.Core.IDB;
 using Xpms.Core.ISecurity;
+using Xpms.Core.Mails;
 
 namespace Xpms.Core.Processes.Base
 {
@@ -15,6 +16,10 @@ namespace Xpms.Core.Processes.Base
 
         public IAuth Auth { get; set; }
 
+        public IMailer Mailer { get; set; }
+
         public IContainerAdapter IoC { get; set; }
+
+        public ILog Log { get { return LogManager.GetLogger(this.GetType()); } }
     }
 }

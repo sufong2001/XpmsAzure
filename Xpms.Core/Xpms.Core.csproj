@@ -33,27 +33,19 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=2.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+    <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AutoMapper.2.2.0\lib\net40\AutoMapper.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="ServiceStack.Common, Version=3.9.37.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Common.3.9.37\lib\net35\ServiceStack.Common.dll</HintPath>
+      <HintPath>..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=3.9.37.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\ServiceStack.Common.3.9.37\lib\net35\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Text, Version=3.9.37.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Text.3.9.37\lib\net35\ServiceStack.Text.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\EmailTemplateNotFoundException.cs" />
     <Compile Include="Exceptions\UserEmailAlreadyExistsException.cs" />
     <Compile Include="Exceptions\InvalidActivationException.cs" />
     <Compile Include="Exceptions\InvalidPasswordException.cs" />
@@ -67,6 +59,13 @@
     <Compile Include="IDB\IRepoData.cs" />
     <Compile Include="IDB\Data\IActivationRecord.cs" />
     <Compile Include="IDB\IRepoEvents.cs" />
+    <Compile Include="IDB\IRepoMails.cs" />
+    <Compile Include="Mails\IMailer.cs" />
+    <Compile Include="Mails\ActivationMail.cs" />
+    <Compile Include="IDB\Data\IMailRecord.cs" />
+    <Compile Include="Mails\MailBase.cs" />
+    <Compile Include="Mails\MailExtensions.cs" />
+    <Compile Include="Mails\WelcomeMail.cs" />
     <Compile Include="Models\Requests\Debug.cs" />
     <Compile Include="Models\Requests\Event.cs" />
     <Compile Include="Models\Requests\IRequest.cs" />
@@ -82,7 +81,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -29,4 +29,9 @@ namespace Xpms.AzureRepository.Constants
         public static string Users = "users";
         public static string Events = "events";
     }
+
+    public class XpmsQueue
+    {
+        public static string Mailouts = "mailouts";
+    }
 }

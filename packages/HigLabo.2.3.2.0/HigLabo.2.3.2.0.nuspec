@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>HigLabo</id>
+    <version>2.3.2.0</version>
+    <authors>Higty</authors>
+    <owners>Higty</owners>
+    <licenseUrl>http://higlabo.codeplex.com/license</licenseUrl>
+    <projectUrl>http://higlabo.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Library include Mail(Smtp,Pop3,Imap),Ftp,Twitter,Dropbox,SugarSync,Box.net,WindowsAzureManagementRestService,WindowsLiveRestService,Facebook,Rss</description>
+    <releaseNotes>Release for .NET 4.0</releaseNotes>
+    <copyright>HigLabo</copyright>
+    <tags>Http OAuth Mail Smtp Pop3 Imap Ftp Twitter Facebook Rss Dropbox SugarSync Box.net WindowsAzureManagementRestService WindowsLiveRestService</tags>
+    <references>
+      <reference file="HigLabo.Data.dll" />
+      <reference file="HigLabo.Mail.dll" />
+      <reference file="HigLabo.Net.BoxNet.dll" />
+      <reference file="HigLabo.Net.dll" />
+      <reference file="HigLabo.Net.Dropbox.dll" />
+      <reference file="HigLabo.Net.Facebook.dll" />
+      <reference file="HigLabo.Net.Ftp.dll" />
+      <reference file="HigLabo.Net.Rss.dll" />
+      <reference file="HigLabo.Net.SugarSync.dll" />
+      <reference file="HigLabo.Net.Twitter.dll" />
+      <reference file="HigLabo.Net.WindowsLive.dll" />
+      <reference file="HigLabo.WindowsAzure.RestService.dll" />
+      <reference file="Newtonsoft.Json.dll" />
+    </references>
+  </metadata>
+</package>

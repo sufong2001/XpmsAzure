@@ -42,6 +42,7 @@
       <HintPath>..\packages\ServiceStack.Common.3.9.37\lib\net35\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
@@ -60,12 +61,15 @@
     <Compile Include="IDB\Data\IActivationRecord.cs" />
     <Compile Include="IDB\IRepoEvents.cs" />
     <Compile Include="IDB\IRepoMails.cs" />
-    <Compile Include="Mails\IMailer.cs" />
-    <Compile Include="Mails\ActivationMail.cs" />
+    <Compile Include="Message\IComposable.cs" />
+    <Compile Include="Message\IMailer.cs" />
+    <Compile Include="Message\Emails\ActivationMail.cs" />
     <Compile Include="IDB\Data\IMailRecord.cs" />
-    <Compile Include="Mails\MailBase.cs" />
-    <Compile Include="Mails\MailExtensions.cs" />
-    <Compile Include="Mails\WelcomeMail.cs" />
+    <Compile Include="Message\MailBase.cs" />
+    <Compile Include="Message\MailExtensions.cs" />
+    <Compile Include="Message\Emails\WelcomeMail.cs" />
+    <Compile Include="Message\Mailman.cs" />
+    <Compile Include="Message\MailSave.cs" />
     <Compile Include="Models\Requests\Debug.cs" />
     <Compile Include="Models\Requests\Event.cs" />
     <Compile Include="Models\Requests\IRequest.cs" />
@@ -82,6 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\J.F.Libs\J.F.Libs.csproj">
+      <Project>{77a58e46-80b1-449c-a4cb-2d9ee0c425d1}</Project>
+      <Name>J.F.Libs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

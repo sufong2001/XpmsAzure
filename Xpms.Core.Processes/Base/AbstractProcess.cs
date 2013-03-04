@@ -2,7 +2,7 @@
 using ServiceStack.Logging;
 using Xpms.Core.IDB;
 using Xpms.Core.ISecurity;
-using Xpms.Core.Mails;
+using Xpms.Core.Message;
 
 namespace Xpms.Core.Processes.Base
 {

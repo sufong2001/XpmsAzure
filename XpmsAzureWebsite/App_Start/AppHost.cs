@@ -10,7 +10,7 @@ using System.Configuration;
 using Xpms.AzureRepository;
 using Xpms.Core.IDB;
 using Xpms.Core.ISecurity;
-using Xpms.Core.Mails;
+using Xpms.Core.Message;
 using Xpms.Core.Processes.Base;
 using Xpms.WebServices;
 using Xpms.WebServices.Auth;

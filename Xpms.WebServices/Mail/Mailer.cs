@@ -1,8 +1,6 @@
-﻿using ServiceStack.Razor;
-using Xpms.Core.Exceptions;
+﻿using System.Threading;
 using Xpms.Core.IDB;
-using Xpms.Core.Mails;
-using Xpms.Core.Processes.MailProcess;
+using Xpms.Core.Message;
 
 namespace Xpms.WebServices.Mail
 {
@@ -10,26 +8,23 @@ namespace Xpms.WebServices.Mail
     {
         public IRepository Storage { get; set; }
 
-        public void Dispatch<T>(T mail) where T : MailBase
+        public IRepoMails MailQueue { get { return Storage.RepoMails; } }
+
+        public void Dispatch<T>(T mail) where T : MailBase, IComposable<T>
         {
-            Compose(mail);
+            var draft = mail
+                .Compose()
+                .ComposeBody()
+                .ToDraft();
 
-            mail.Send();
-        }
+            MailQueue.Save(draft);
 
-        public void Compose<T>(T mail) where T : MailBase
-        {
-            var format = RazorFormat.Instance;
-
-            var viewRef = format.GetMailTemplate<T>();
-            if (viewRef == null)
-                throw new EmaiTemplateNotFoundException();
-
-            mail.HtmlBody = format
-                .ExecuteTemplate(mail, viewRef.Name, viewRef.Template)
-                .Result;
-
-            mail.Compose();
+            ThreadPool.QueueUserWorkItem(obj =>
+                {
+                    var draftMail = MailQueue.Get<MailDraft>();
+                    var email = draftMail.LoadDraft();
+                    email.Send();
+                });
         }
     }
 }

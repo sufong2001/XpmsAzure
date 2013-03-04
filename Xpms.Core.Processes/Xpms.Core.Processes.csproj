@@ -45,8 +45,6 @@
     <Compile Include="AccountProcess.cs" />
     <Compile Include="Base\AbstractProcess.cs" />
     <Compile Include="EventProcess.cs" />
-    <Compile Include="MailProcess\MailExtensions.cs" />
-    <Compile Include="MailProcess\Mailman.cs" />
     <Compile Include="PasswordResetProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignupProcess.cs" />

@@ -19,6 +19,7 @@ namespace Xpms.AzureRepository
 
         public IRepoUsers RepoUsers { get; set; }
         public IRepoEvents RepoEvents { get; set; }
+        public IRepoMails RepoMails { get; set; }
 
         private AzureStorage(string connectionString)
         {
@@ -27,6 +28,7 @@ namespace Xpms.AzureRepository
             CreateStorageIfNotExists();
 
             RepoUsers = new DaoUsers(this);
+            RepoMails = new DaoMails(this);
         }
 
         private static AzureStorage SingleAzureStorage { get; set; }

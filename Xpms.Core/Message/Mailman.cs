@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using J.F.Libs.Extensions;
 using System.Configuration;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
-using J.F.Libs.Extensions;
-using Xpms.Core.Mails;
 
-namespace Xpms.Core.Processes.MailProcess
+namespace Xpms.Core.Message
 {
     public class Mailman : SmtpClient
     {

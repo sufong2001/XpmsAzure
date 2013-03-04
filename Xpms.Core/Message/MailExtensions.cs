@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Net.Mail;
+using AutoMapper;
+using Xpms.Core.Extensions;
 
-namespace Xpms.Core.Mails
+namespace Xpms.Core.Message
 {
     public static class MailExtensions
     {
@@ -35,9 +37,42 @@ namespace Xpms.Core.Mails
                 to ?? mail.To,
                 subject ?? mail.Subject,
                 body ?? mail.HtmlBody ?? mail.TextBody
-            );
+            )
+            {
+                IsBodyHtml = !string.IsNullOrEmpty(mail.HtmlBody)
+            };
 
             return msg;
+        }
+
+        public static void Send(this MailBase mail)
+        {
+            using (var mailman = new Mailman())
+            {
+                mailman.Send(mail);
+            }
+        }
+
+        public static MailDraft ToDraft(this MailBase mail)
+        {
+            var draft = mail.MapAs<MailDraft>();
+            draft.MailType = mail.GetType().FullName;
+
+            return draft;
+        }
+
+        public static MailBase LoadDraft(this MailDraft draft)
+        {
+            if(string.IsNullOrEmpty(draft.MailType))
+                throw new ArgumentException("Mail Type is required in the Mail Draft.");
+
+            Type t = Type.GetType(draft.MailType);
+            if (t == null)
+                throw new ArgumentException("Mail Type is not found.");
+
+
+
+            return (MailBase) draft.MapAs(t);
         }
     }
 }

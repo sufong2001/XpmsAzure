@@ -2,7 +2,7 @@
 using Xpms.Core.Constants;
 using Xpms.Core.Exceptions;
 using Xpms.Core.IDB.Data;
-using Xpms.Core.Mails;
+using Xpms.Core.Message.Emails;
 using Xpms.Core.Models.Requests;
 using Xpms.Core.Processes.Base;
 

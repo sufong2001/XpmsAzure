@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xpms.Core.Extensions;
 
 namespace Xpms.AzureRepository.Extensions
 {
@@ -21,10 +22,7 @@ namespace Xpms.AzureRepository.Extensions
         public static TDestination MapToEntity<TDestination>(this object data)
             where TDestination : class
         {
-            if (data == null) return null;
-
-            Mapper.CreateMap(data.GetType(), typeof(TDestination));
-            return Mapper.Map<TDestination>(data);
+            return data.MapAs<TDestination>();
         }
     }
 }

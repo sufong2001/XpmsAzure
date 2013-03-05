@@ -14,9 +14,9 @@ namespace Xpms.WebServices.Mail
             return razor.GetViewPage(name);
         }
 
-        public static T ComposeBody<T>(this T mail) where T : MailBase
+        public static T ComposeBody<T>(this T mail, RazorFormat format = null) where T : MailBase
         {
-            var format = RazorFormat.Instance;
+            format = format ?? RazorFormat.Instance;
 
             var viewRef = format.GetMailTemplate(mail);
             if (viewRef == null)

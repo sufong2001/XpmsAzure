@@ -74,6 +74,7 @@
     <Compile Include="DAO\DaoMails.cs" />
     <Compile Include="EntityModels\Event.cs" />
     <Compile Include="EntityModels\EventSchedule.cs" />
+    <Compile Include="Extensions\CloudBlobContainerExtensions.cs" />
     <Compile Include="Extensions\CloudTableExtensions.cs" />
     <Compile Include="Extensions\ITableEntityExtensions.cs" />
     <Compile Include="EntityModels\Activation.cs" />

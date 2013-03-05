@@ -9,14 +9,11 @@ using Xpms.Core.Extensions;
 
 namespace Xpms.AzureRepository.Extensions
 {
-    public static class ITableEntityExtensions
+    public static class TableEntityExtensions
     {
         public static T MapTo<T>(this ITableEntity entity) where T : class
         {
-            if (entity == null) return default(T);
-
-            Mapper.CreateMap(entity.GetType(), typeof(T));
-            return Mapper.Map<T>(entity);
+            return entity.MapAs<T>();
         }
 
         public static TDestination MapToEntity<TDestination>(this object data)

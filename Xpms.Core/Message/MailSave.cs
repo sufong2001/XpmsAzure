@@ -5,6 +5,14 @@ namespace Xpms.Core.Message
 {
     public class MailDraft : IMailRecord
     {
+
+        public MailDraft()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+
+        public string Id { get; set; }
+
         public string From { get; set; }
 
         public string To { get; set; }

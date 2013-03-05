@@ -34,4 +34,9 @@ namespace Xpms.AzureRepository.Constants
     {
         public static string Mailouts = "mailouts";
     }
+
+    public class XpmsBlobContainer
+    {
+        public static string MailoutAttachments = "mailoutattachments";
+    }
 }

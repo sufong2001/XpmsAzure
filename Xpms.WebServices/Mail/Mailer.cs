@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using ServiceStack.Razor;
 using Xpms.Core.IDB;
 using Xpms.Core.Message;
 
@@ -12,18 +13,15 @@ namespace Xpms.WebServices.Mail
 
         public void Dispatch<T>(T mail) where T : MailBase, IComposable<T>
         {
-            var draft = mail
-                .Compose()
-                .ComposeBody()
-                .ToDraft();
+            var draft = mail.Compose()
+                .ComposeBody();
 
             MailQueue.Save(draft);
 
             ThreadPool.QueueUserWorkItem(obj =>
                 {
-                    var draftMail = MailQueue.Get<MailDraft>();
-                    var email = draftMail.LoadDraft();
-                    email.Send();
+                    var draftMail = MailQueue.Get<MailBase>();
+                    draftMail.Send();
                 });
         }
     }

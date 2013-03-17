@@ -103,7 +103,7 @@ namespace Xpms.Web.Tests
         public void TestSingnup()
         {
             var respond = ServiceClient.Post<object>("/signup"
-                , new SignupRequest { Email = "sufong", Password = "1234", ConfirmPassword = "1234" });
+                , new SignupRequest { Email = "sufong2001@yahoo.com.au", Password = "1234", ConfirmPassword = "1234" });
 
             Assert.AreEqual(respond, respond);
         }
@@ -124,7 +124,7 @@ namespace Xpms.Web.Tests
         public void TestPasswordReset()
         {
             var respond = ServiceClient.Post<object>("/password-reset/"
-                , new PasswordResetRequest { Email = "sufong"});
+                , new PasswordResetRequest { Email = "sufong2001@yahoo.com.au" });
 
             Assert.IsNotNull(respond);
         }
@@ -133,7 +133,7 @@ namespace Xpms.Web.Tests
         public void TestResetPassword()
         {
             var respond = ServiceClient.Post<string>("/password-reset/"
-                , new PasswordResetRequest { Email = "sufong" });
+                , new PasswordResetRequest { Email = "sufong2001@yahoo.com.au" });
 
             var hash = ServiceClient.Post<string>("/password-reset-verification"
                 , new PasswordResetVerificationRequest { Key = respond });
@@ -148,7 +148,7 @@ namespace Xpms.Web.Tests
         public void TestAuth()
         {
             var respond = ServiceClient.Post<object>("/auth/credentials"
-                , new Auth { UserName = "sufong", Password = "new password" });
+                , new Auth { UserName = "sufong2001@yahoo.com.au", Password = "new password" });
 
 
             Assert.AreEqual(respond, respond);

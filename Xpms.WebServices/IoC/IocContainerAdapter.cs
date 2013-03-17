@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ServiceStack.Common;
+﻿using Funq;
 using ServiceStack.Configuration;
-using ServiceStack.ServiceHost;
-using Funq;
+using System;
 
 namespace Xpms.WebServices.IoC
 {
     public class IocContainerAdapter : IContainerAdapter, IRelease
     {
         public Container Container { get; set; }
+
         public IocContainerAdapter(Container container)
         {
             Container = container;

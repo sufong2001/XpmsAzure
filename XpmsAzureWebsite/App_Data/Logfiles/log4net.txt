@@ -26,3 +26,288 @@ To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fus
 2013-04-27 15:50:19,678 [11604] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
 2013-04-27 15:50:42,675 [7420] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /glimpse.axd
 2013-04-27 15:50:42,825 [11708] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2013-05-28 20:48:15,331 [10820] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2013-05-28 20:48:58,529 [11156] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2013-05-28 20:50:19,864 [10996] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2013-05-28 20:50:24,537 [11000] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2013-05-28 20:50:33,970 [11000] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2013-05-28 20:50:52,829 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,837 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,840 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,840 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,841 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,842 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,842 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,843 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,843 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,844 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,845 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,845 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,846 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,846 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,847 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,847 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,848 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,849 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,850 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,851 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,851 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,852 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,852 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,853 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,853 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,854 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,854 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,855 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,855 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,856 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,857 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,857 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,858 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,858 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,859 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,859 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,860 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,860 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,861 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,862 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,862 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,863 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,863 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,863 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,864 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,864 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,864 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,865 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,865 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,866 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,866 [8840] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,867 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,867 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,868 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,868 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,868 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,869 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,869 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,870 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,870 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,871 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,871 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,872 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,872 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,873 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,874 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,874 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,875 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,875 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Deleted error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Deleted(Object sender, FileSystemEventArgs e)
+2013-05-28 20:50:52,876 [5640] WARN  ServiceStack.Razor.Managers.FileSystemWatcherLiveReload [(null)] - FileSystemWatcher_Changed error: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ServiceStack.Razor.Managers.RazorViewManager.IsWatchedFile(IVirtualFile file)
+   at ServiceStack.Razor.Managers.FileSystemWatcherLiveReload.FileSystemWatcher_Changed(Object sender, FileSystemEventArgs e)

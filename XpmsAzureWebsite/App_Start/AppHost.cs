@@ -55,7 +55,7 @@ namespace XpmsAzureWebsite.App_Start
             RegisterDependencies(container);
 
             Plugins.Add(new ValidationFeature());
-            Plugins.Add(RazorFormat.Instance);
+            Plugins.Add(new RazorFormat());
             Plugins.ConfigAuth(container);
         }
 
